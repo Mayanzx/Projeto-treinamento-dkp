@@ -1,0 +1,36 @@
+{
+  "times": [
+    {
+      "id": "4dcd",
+      "nome": "Geovane Mayan Loures Bertolini"
+    },
+    {
+      "id": "b999",
+      "nome": "Geovane Mayan Loures Bertolini"
+    },
+    {
+      "id": "09f9",
+      "nome": "Geovane Mayan Loures Bertolini"
+    },
+    {
+      "id": "3b23",
+      "nome": "Geovane Mayan Loures Bertolini"
+    },
+    {
+      "id": "d0bb",
+      "nome": ""
+    }
+  ],
+  "jogadores": [
+    {
+      "id": "33e6",
+      "jogador": "Geovane Mayan Loures Bertolini",
+      "times": "dados"
+    },
+    {
+      "id": "9561",
+      "jogador": "oi",
+      "times": "dados"
+    }
+  ]
+}
