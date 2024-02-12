@@ -16,7 +16,6 @@
                 <div class="input-container">
                     <label for="time">Escolha o time:</label>
                     <select name="time" id="time" v-model="time">
-                    <option value="">Selecione o time</option>
                     <option v-for=" time in times" :key="time.id" :value="time.nome">
                         {{time.nome}}
                     </option>
@@ -40,8 +39,7 @@ export default{
     data(){
         return{
             nome: null,
-            nomes: null,
-            times: [],
+            times: null,
             jogadores: null,
             time: null,
             jogador: null,
@@ -69,6 +67,8 @@ export default{
             console.log(res);
 
             this.nome = "";
+
+            window.location.reload();
 
         },
         async createPlayer(e){
@@ -106,7 +106,9 @@ export default{
             }
     },
     mounted(){
-        this.getTeam()
+        fetch("http://localhost:3000/times")
+        .then(resp => resp.json())
+        .then(data=> this.times = data)
     }
 }
 
