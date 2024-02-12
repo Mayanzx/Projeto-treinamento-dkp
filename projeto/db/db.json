@@ -63,14 +63,17 @@
     {
       "id": "2fbc",
       "nome": "São Paulo"
+    },
+    {
+      "id": "7383",
+      "nome": "Cori"
+    },
+    {
+      "id": "f913",
+      "nome": "Corinthians"
     }
   ],
   "jogadores": [
-    {
-      "id": "2d7f",
-      "jogador": "Luan",
-      "time": "Márcia"
-    },
     {
       "id": "b20e",
       "jogador": "Altair",

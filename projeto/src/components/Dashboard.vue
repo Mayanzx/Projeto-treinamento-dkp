@@ -1,5 +1,6 @@
 <template>
     <div id="team-table">
+        <Message :msg="msg" v-show="msg" />
         <div>
             <div id="team-table-heading">
                 <div>Jogadores:</div>
@@ -18,12 +19,18 @@
 </template>
 
 <script>
+import Message from './Message.vue';
+
 export default{
     name: "Dashboard",
     data(){
         return{
         jogadores: null,
+        msg: null
     }
+},
+components: {
+    Message
 },
 methods:{
     async getRegistros(){
@@ -40,6 +47,10 @@ this.jogadores = data;
         });
 
         const res = await req.json();
+
+        this.msg = 'Registro de jogador deletado com sucesso'
+
+        setTimeout(()=> this.msg = "", 3000);
 
         this.getRegistros(); 
     }
