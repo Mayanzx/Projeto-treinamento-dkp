@@ -1,6 +1,6 @@
 <template>
     <div>
-        <p>Componente de Mensagem</p>
+        <Message :msg="msg" v-show="msg" />
         <div>
             <form id="team-form" @submit="createTeam">
                 <div class="input-container">
@@ -34,6 +34,8 @@
 </template>
 
 <script>
+import Message from './Message.vue';
+
 export default{
     name: "TeamForm",
     data(){
@@ -70,6 +72,7 @@ export default{
 
             window.location.reload();
 
+
         },
         async createPlayer(e){
 
@@ -95,6 +98,10 @@ export default{
             this.jogador = "";
             this.time = "";
 
+            this.msg = 'Jogador cadastrado com sucesso'
+
+            setTimeout(()=> this.msg = "", 3000);
+
 },
             async getTeam(){
 
@@ -109,6 +116,9 @@ export default{
         fetch("http://localhost:3000/times")
         .then(resp => resp.json())
         .then(data=> this.times = data)
+    },
+    components:{
+        Message
     }
 }
 

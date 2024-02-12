@@ -1,9 +1,18 @@
 <template>
   <div class="main-container">
-    <h1>REGISTRO</h1>
+    <h1>Gerenciar registros</h1>
+    <Dashboard />
   </div>
 </template>
 
 <script>
+import Dashboard from "../components/Dashboard.vue";
+
+export default{
+  name: "Pedidos",
+  components: {
+    Dashboard
+  }
+}
 
 </script>

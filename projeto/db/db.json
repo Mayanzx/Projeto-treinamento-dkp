@@ -55,42 +55,31 @@
     {
       "id": "70b6",
       "nome": "Márcia"
+    },
+    {
+      "id": "2ed4",
+      "nome": "Nome"
+    },
+    {
+      "id": "2fbc",
+      "nome": "São Paulo"
     }
   ],
   "jogadores": [
     {
-      "id": "9561",
-      "jogador": "oi",
-      "times": "dados"
-    },
-    {
-      "id": "2125",
-      "jogador": "wdwd wdw"
-    },
-    {
-      "id": "f0e2",
-      "jogador": "dddd",
-      "time": ""
-    },
-    {
-      "id": "5698",
-      "jogador": "pppp",
-      "time": ""
-    },
-    {
-      "id": "9915",
-      "jogador": "Geovane Mayan",
-      "time": null
-    },
-    {
-      "id": "0296",
-      "jogador": "wdedwww wdwd",
-      "time": "pedro"
-    },
-    {
       "id": "2d7f",
       "jogador": "Luan",
       "time": "Márcia"
+    },
+    {
+      "id": "b20e",
+      "jogador": "Altair",
+      "time": "Santos"
+    },
+    {
+      "id": "9696",
+      "jogador": "Alexandro",
+      "time": "Santos"
     }
   ]
 }
