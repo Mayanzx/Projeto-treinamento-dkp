@@ -4,8 +4,8 @@
         <div>
             <form id="team-form" @submit="createTeam">
                 <div class="input-container">
-                    <label for="time">Nome do time</label>
-                    <input type="text" id="nome" name="name" v-model="nome" placeholder="Digite o nome">
+                    <label for="nome">Nome do time</label>
+                    <input type="text" id="nome" name="nome" v-model="nome" placeholder="Digite o nome">
                 </div>
                 <div class="input-container">
                     <input type="submit" class="submit-btn " value="Cadastrar o time">
@@ -14,10 +14,12 @@
             <h1>Cadastre os jogadores:</h1>
             <form id="player-form" @submit="createPlayer">
                 <div class="input-container">
-                    <label for="time">Escolha o time</label>
-                    <select name="time" id="time" v-model="times">
+                    <label for="time">Escolha o time:</label>
+                    <select name="time" id="time" v-model="time">
                     <option value="">Selecione o time</option>
-                    <option v-for="time in times" :key="time.id" value="time.tipo">{{time.tipo}}</option>
+                    <option v-for=" time in times" :key="time.id" :value="time.nome">
+                        {{time.nome}}
+                    </option>
                     </select>
                 </div>
                 <div class="input-container">
@@ -37,7 +39,9 @@ export default{
     name: "TeamForm",
     data(){
         return{
-            times: null,
+            nome: null,
+            nomes: null,
+            times: [],
             jogadores: null,
             time: null,
             jogador: null,
@@ -97,7 +101,8 @@ export default{
                 const req = await fetch("http://localhost:3000/times");
                 const data = await req.json();
 
-                this.times = datas.times;
+                console.log(data);
+                this.times = data.times;
             }
     },
     mounted(){
