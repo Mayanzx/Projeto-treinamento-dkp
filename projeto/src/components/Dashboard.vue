@@ -16,6 +16,25 @@
             </div>
         </div>
     </div>
+
+    <br>
+    <br>
+    <h1>Gerenciar times</h1>
+
+    <div id="teams-table">
+        <div>
+            <div id="teams-table-heading">
+                <div>Times:</div>
+                <div>Opção:</div>
+            </div>
+        </div>
+        <div id="teams-table-rows">
+            <div class="teams-table-row" v-for="time in times" :key="time.id">
+                <div>{{time.nome}}</div>
+                <button class="delete-btn" @click="deleteTime(time.id)">Deletar registro</button>
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -26,6 +45,7 @@ export default{
     data(){
         return{
         jogadores: null,
+        times: null,
         msg: null
     }
 },
@@ -48,15 +68,39 @@ this.jogadores = data;
 
         const res = await req.json();
 
-        this.msg = 'Registro de jogador deletado com sucesso'
+        this.msg = 'Jogador deletado com sucesso'
 
         setTimeout(()=> this.msg = "", 3000);
 
         this.getRegistros(); 
-    }
+    },
+    async deleteTime(id){
+        const req = await fetch(`http://localhost:3000/times/${id}`, {
+            method: "DELETE"
+        });
+
+        const res = await req.json();
+
+        this.msg = 'Time deletado com sucesso'
+
+        setTimeout(()=> this.msg = "", 3000);
+
+        this.getTimes(); 
+    },
+
+    async getTimes(){
+
+const req = await fetch("http://localhost:3000/times");
+const data = await req.json();
+
+console.log(data);
+this.times = data;
+},
+
 },
 mounted(){
     this.getRegistros();
+    this.getTimes();
 }
 }
 
@@ -68,14 +112,23 @@ mounted(){
         margin: 0 auto;
     }
 
+    #teams-table{
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
     #team-table-heading,
     #team-table-rows,
-    .team-table-row{
+    .team-table-row,
+    #teams-table-heading,
+    #teams-table-rows,
+    .teams-table-row{
         display: flex;
         flex-wrap: wrap;
     }
 
-    #team-table-heading{
+    #team-table-heading,
+    #teams-table-heading{
         font-weight: bold;
         padding: 12px;
         border-bottom: 3px solid #333;
@@ -86,7 +139,13 @@ mounted(){
         width: 33%;
     }
 
-    .team-table-row{
+    #teams-table-heading div,
+    .teams-table-row div{
+        width: 50%;
+    }
+
+    .team-table-row,
+    .teams-table-row{
         width: 100%;
         padding: 12px ;
         border-bottom: 1px solid #ccc;
@@ -94,7 +153,7 @@ mounted(){
 
     .delete-btn{
         background-color: #222;
-        color: #fcba03;
+        color: rgb(24, 224, 24);
         font-weight: bold;
         border: 2px solid #222;
         padding: 10px;

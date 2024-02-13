@@ -1,6 +1,6 @@
 <template>
   <div class="main-container">
-    <h1>Gerenciar registros</h1>
+    <h1>Gerenciar jogadores</h1>
     <Dashboard />
   </div>
 </template>

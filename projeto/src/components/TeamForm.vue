@@ -141,7 +141,7 @@ export default{
         margin-bottom: 15px;
         color: #222;
         padding: 5px 10px;
-        border-left: 4px solid #FCBA03;
+        border-left: 4px solid rgb(24, 224, 24);
     }
 
     input, select{
@@ -151,7 +151,7 @@ export default{
 
     .submit-btn {
         background-color: #222;
-        color: #FCBA03;
+        color: rgb(24, 224, 24);
         font-weight: bold;
         border: 2px solid #222;
         padding: 10px;

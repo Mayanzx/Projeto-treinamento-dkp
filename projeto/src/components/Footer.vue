@@ -15,7 +15,7 @@ export default{
         height: 200px;
         background-color: #222;
         border-top: 4px solid #111 ;
-        color: #FCBA03;
+        color: rgb(24, 224, 24);
         display: flex;
         align-items: center;
         justify-content: center;
