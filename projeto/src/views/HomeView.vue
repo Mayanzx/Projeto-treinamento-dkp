@@ -1,7 +1,6 @@
 <template>
   <Banner />
   <div class="main-container">
-    <h1>Cadastre o seu time:</h1>
     <TeamForm />
   </div>
 </template>

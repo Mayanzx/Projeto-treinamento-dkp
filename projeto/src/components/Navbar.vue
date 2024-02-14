@@ -3,8 +3,8 @@
     <RouterLink to="/" id="logo-url">
         <img :src="logo" :alt="alt" id="logo">
     </RouterLink>
-    <router-link to="/">Home</router-link>
-    <router-link to="/registro">Registro</router-link>
+    <router-link to="/">Cadastro</router-link>
+    <router-link to="/registro">Registros</router-link>
 </div>
 </template>
 

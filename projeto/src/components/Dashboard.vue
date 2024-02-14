@@ -75,17 +75,20 @@ this.jogadores = data;
         this.getRegistros(); 
     },
     async deleteTime(id){
+
         const req = await fetch(`http://localhost:3000/times/${id}`, {
             method: "DELETE"
         });
 
         const res = await req.json();
 
+
         this.msg = 'Time deletado com sucesso'
 
         setTimeout(()=> this.msg = "", 3000);
 
-        this.getTimes(); 
+        this.getTimes();
+            this.getRegistros();
     },
 
     async getTimes(){

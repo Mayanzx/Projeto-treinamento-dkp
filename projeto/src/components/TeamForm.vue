@@ -1,8 +1,9 @@
 <template>
     <div>
         <Message :msg="msg" v-show="msg" />
-        <div>
+        <div class="form-container">
             <form id="team-form" @submit="createTeam">
+                <h1>Cadastre o time:</h1>
                 <div class="input-container">
                     <label for="nome">Nome do time</label>
                     <input type="text" id="nome" name="nome" v-model="nome" placeholder="Digite o nome">
@@ -11,8 +12,9 @@
                     <input type="submit" class="submit-btn " value="Cadastrar o time">
                 </div>
             </form>
-            <h1>Cadastre os jogadores:</h1>
+            <div class="divider"></div>
             <form id="player-form" @submit="createPlayer">
+                <h1>Cadastre o jogador:</h1>
                 <div class="input-container">
                     <label for="time">Escolha o time:</label>
                     <select name="time" id="time" v-model="time">
@@ -40,11 +42,11 @@ export default{
     name: "TeamForm",
     data(){
         return{
-            nome: null,
+            nome: '',
             times: null,
             jogadores: null,
-            time: null,
-            jogador: null,
+            time: '',
+            jogador: '',
             msg: null,
         }
     },
@@ -52,6 +54,11 @@ export default{
         async createTeam(e){
 
             e.preventDefault ();
+
+            if (this.nome === '') {
+        alert('Por favor, digite um nome para o time antes de enviar.');
+        return;
+      }
 
             const datat ={
                 nome: this.nome,
@@ -77,6 +84,15 @@ export default{
         async createPlayer(e){
 
             e.preventDefault ();
+
+            if (this.jogador === '') {
+        alert('Por favor, digite o nome do jogador antes de enviar.');
+        return;  
+      }
+      if (this.time === '') {
+        alert('Por favor, selecione o time antes de enviar.');
+        return;
+      }
 
             const dataj ={
                 jogador: this.jogador,
@@ -139,7 +155,7 @@ export default{
     label{
         font-weight:bold;
         margin-bottom: 15px;
-        color: #222;
+        color: #000000;
         padding: 5px 10px;
         border-left: 4px solid rgb(24, 224, 24);
     }
@@ -150,13 +166,14 @@ export default{
     }
 
     .submit-btn {
-        background-color: #222;
+        background-color: #1a1919;
         color: rgb(24, 224, 24);
         font-weight: bold;
         border: 2px solid #222;
+        border-radius: 20px;
         padding: 10px;
         font-size: 16px;
-        margin: 0 auto;
+        margin: 1 auto;
         cursor: pointer;
         transition:.5s;
     }
@@ -165,4 +182,17 @@ export default{
         background-color: transparent;
         color: #222;
     }
+
+    .form-container {
+    display: flex;
+    align-items: center;
+    
+  }
+
+  .divider {
+    border-left: 3px solid black;
+    height: 300px;
+    margin: 0 20px;
+    border-radius: 30px;
+  }
 </style>

@@ -1,15 +1,4 @@
 {
-  "times": [
-    {
-      "id": "53d0",
-      "nome": "Brasil"
-    }
-  ],
-  "jogadores": [
-    {
-      "id": "e620",
-      "jogador": "Neymar",
-      "time": "Brasil"
-    }
-  ]
+  "times": [],
+  "jogadores": []
 }
