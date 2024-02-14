@@ -9,7 +9,7 @@
 import Dashboard from "../components/Dashboard.vue";
 
 export default{
-  name: "Pedidos",
+  name: "Registros",
   components: {
     Dashboard
   }
